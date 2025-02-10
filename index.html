@@ -1,0 +1,88 @@
+import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+
+const GenericDashboard = () => {
+  return (
+    <div className="bg-black min-h-screen p-4">
+      <div className="max-w-4xl mx-auto">
+        {/* Logo Area */}
+        <div className="flex justify-center items-center mb-8">
+          <div className="text-white text-3xl font-bold mr-4">TRACKER</div>
+          <div className="w-20 h-20 bg-gray-500 rounded-full flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Price Graphs */}
+        <div className="flex mb-8 space-x-4">
+          <div className="flex-1 bg-gray-800 p-4 rounded">
+            <div className="text-white mb-2">Price of Item A: $7.09</div>
+            <div className="h-20 bg-gray-700 rounded">
+              {/* Placeholder for graph */}
+              <svg viewBox="0 0 100 20" className="w-full h-full">
+                <polyline 
+                  points="0,10 20,8 40,12 60,9 80,11 100,10" 
+                  fill="none" 
+                  stroke="blue" 
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+          <div className="flex-1 bg-gray-800 p-4 rounded">
+            <div className="text-white mb-2">Price of Item B: $3.08</div>
+            <div className="h-20 bg-gray-700 rounded">
+              {/* Placeholder for graph */}
+              <svg viewBox="0 0 100 20" className="w-full h-full">
+                <polyline 
+                  points="0,10 20,11 40,9 60,12 80,8 100,10" 
+                  fill="none" 
+                  stroke="blue" 
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        {/* Key Metrics */}
+        <div className="grid grid-cols-3 gap-4 mb-8">
+          <Card>
+            <CardContent className="pt-6">
+              <div className="text-blue-500 text-2xl font-bold">21</div>
+              <div className="text-sm">Days Tracked</div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="pt-6">
+              <div className="text-green-500 text-2xl font-bold">4</div>
+              <div className="text-sm">Specific Metric</div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="pt-6">
+              <div className="text-red-500 text-2xl font-bold">19.05%</div>
+              <div className="text-sm">Percentage</div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Recent Activities */}
+        <div className="bg-gray-800 rounded">
+          {['02/02/2025', '02/01/2025', '01/27/2025', '01/26/2025'].map((date, index) => (
+            <div 
+              key={index} 
+              className="p-4 border-b border-gray-700 last:border-b-0 text-white"
+            >
+              {date} - Sample activity or log entry
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default GenericDashboard;
